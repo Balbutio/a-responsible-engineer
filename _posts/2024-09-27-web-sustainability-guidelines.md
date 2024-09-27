@@ -7,7 +7,7 @@ title:  "Green IO London 2024 / Web Sustainability Guidelines: Getting Started"
 
 The second Green IO* London conference took place last week on September 19th, 2024. Principally organised by Gaël Duez, the event (and others like it) represents a growing movement of responsible technologists that are aware of the increasing environmental impact of IT and are committed to reducing it. In one of many exciting talks at the conference, Alexander Dawson of the Sustainable Web Design Community Group discussed the [Web Sustainability Guidelines (WSG) 1.0](https://w3c.github.io/sustyweb/) – a publicly available specification which is seeking to become an official W3C standard and may one day hold a similar influence to the WCAG.
 
-_* Go check out the [Green IO podcast and newsletter](https://podcasts.castplus.fm/greenio) for interesting interviews and news – you won’t regret it._
+_* You should definitely check out the [Green IO podcast and newsletter](https://podcasts.castplus.fm/greenio) for interesting interviews and news – you won’t regret it._
 
 Before jumping headfirst into the specification, Alexander advised checking out the [introduction page](https://w3c.github.io/sustyweb/intro.html) – this outlines the manifesto behind the specification and highlights the core principle of putting Planet, People and Prosperity first.
 When it is time to examine the specification in more detail, try not to be put off by its size. Perhaps digest it in chunks - starting with sections that reach out to you. You might even find that some guidelines overlap with your current work.
