@@ -1,16 +1,17 @@
 ---
 layout: post
-title:  "Overnight/weekend shutdown project: A retrospective"
+title:  "Overnight/Weekend shutdown project: A retrospective"
 ---
 
 Cloud resources can be expensive, and it wasn't long after the march to cloud migration begun that FinOps and cloud cost-optimisation took off. In 2024, cloud cost-optimisation is a well-established function in many organisations, though equally, as time passes and our platforms, products and requirements change - new opportunities to reduce operational costs emerge. As do opportunities for improving the sustainability of our tech, and sometimes these opportunities align.
 
-WARNING: The relationship between cost and sustainability is complicated though. In a recent article [Asim Hussain discusses the temptation and peril of using cost as a proxy-KPI] (https://asim.dev/articles/cost-carbon-paradox/). Cost reduction _CAN_ easily lead to increased emissions. So, adopt caution when running with the link between these two.
+WARNING: The relationship between cost and sustainability is complicated. In a recent article [Asim Hussain discusses the temptation and peril of using cost as a proxy-KPI] (https://asim.dev/articles/cost-carbon-paradox/). Cost reduction _CAN_ easily lead to increased emissions. So, adopt caution when running with the link between these two.
 
-Back on topic though, earlier this year we got the go-ahead to build out a service which went beyond the default offerings of the major cloud providers - shutting down the entirety of our cloud-hosted DEV and TEST environments at night, on weekends, and public holidays (more on that later) and powering them up as required for development. This had emerged as a cost-saving exercise and the intention of the project was to power-down as many resources as possible: load balancers, databases, virtual machines, etc... Having recently undergone a digital sustainability awakening, the team got very excited to take some steps to reduce our carbon footprint with this project, and as often happens when a team is excited about a project - we gave the project a lot of thought and consideration. Looking back, we learnt some things - so here are some interesting takeaways:
+Back on topic, earlier this year we got the go-ahead to build out a service which went beyond the default offerings of the major cloud providers - shutting down the entirety of our cloud-hosted DEV and TEST environments at night, on weekends, and public holidays (more on public holidays later) and starting them up as required. This had emerged as a cost-saving exercise and the intention of the project was to shutdown as many resources as possible: load balancers, databases, virtual machines, etc... Having recently undergone a digital sustainability awakening, the team got very excited to take some steps to reduce our carbon footprint with this project, and as often happens when a team is excited about a project - we gave the project a lot of thought and consideration. So here are some interesting takeaways:
+
 
 ### Robust solutions
-From the beginning of the project, a risk in the forefront of our minds was that - if the solution was unreliable, it would disrupt the work of the development teams. In that scenario, teams might seek ways around shutting things down, and that would be a real setback. We also didn't want to add to our operational costs (in supporting the solution) or build something which required any notable maintenance. So reliability was essential for this project.
+From the beginning of the project, a risk in the forefront of our minds was that - if the solution was unreliable, it would disrupt the work of the development teams, giving them reason to circumvent shutdowns. We also didn't want to add to our operational costs (for supporting and maintaining the solution), so reliability was essential for this project.
 
 Thankfully, cloud providers have very robust API mechanisms for managing resources. We also made use of the exponential backoff pattern for retries - to account for the occasional transient issue or outage. Finally, we also implemented some alerting to make us quickly aware of any issues.
 
@@ -25,10 +26,10 @@ It quickly became clear that teams had different working hours, overnight tests,
 In case of emergency, environments can be quickly brought back online by their team, or if someone is working late the team can adjust the shutdown schedule. Empowering teams to have control over their schedule is important for the project's ongoing operation.
 
 ### Tag for Customisation
-Cloud providers offer tagging functionality on resources, and this can facilitate some clever operations. For example, you could use tagging to exclude certain resources from being shutdown, or exclude certain resources from being brought back online.
+Cloud providers offer tagging functionality on resources, and this can facilitate some clever operations. For example, you could use tagging to exclude certain resources from being shutdown, or exclude certain resources from being started up.
 
 ### The public holiday headache
-Public/bank holiday's get complicated in international organisations. We started out optimistically trying to solve this problem - noting that some governments offer a [public holiday API](https://www.api.gov.uk/gds/bank-holidays/#bank-holidays). Though it quickly became clear that only a subset of holidays are observed in some countries, and that teams can often span multiple countries. The complexity of this problem escalated quickly, and we therefore ended up manually building some JSON data sources through till the end of 2026 which can be consumed/configured by teams depending on their location.
+Public/bank holiday's get complicated in international organisations. We started out optimistically trying to solve this problem - noting that some governments offer a [public holiday API](https://www.api.gov.uk/gds/bank-holidays/#bank-holidays). Though it quickly became clear that only a subset of holidays are observed in some countries, and that teams can often span multiple countries. The complexity of this problem escalated quickly, and we therefore ended up manually building some JSON data sources through til the end of 2026 which can be consumed/configured by teams depending on their location.
 
 ### Don't forget compatibility with patching
 A final point is to ensure that your solution is compatible with any patching mechanisms - we ensured that our IaaS resources could be automatically powered on and any associated schedules disabled during maintenance windows.
