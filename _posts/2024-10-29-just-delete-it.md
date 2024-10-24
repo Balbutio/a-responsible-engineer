@@ -25,12 +25,12 @@ Similarly, we shouldn’t overly revere our own work. The IKEA effect is a pheno
 
 ### Question everything
 
-New development seems to steal much of the spotlight when we discuss the greening of software, though efforts and carbon savings are important in product maintenance also. Many of the principles that François discusses are especially relevant to this area, particularly in teams that don’t have a dedicated product owner. A great early step in developing our green software maturity is to look back at our software stacks and assets, re-evaluate their usefulness, and refine what we have. So here is a smorgasbord of questions inspired by those in this field, to evoke thinking on this topic.
+New development seems to steal much of the spotlight when we discuss the greening of software, though efforts and carbon savings are important in product maintenance also. Many of the principles that François discusses are especially relevant to this area, particularly in teams that don’t have a dedicated product owner. A great early step in developing our green software maturity is to look back at our software stacks and assets, re-evaluate their usefulness, refine what we have and retire what we can. So here is a smorgasbord of questions inspired by those in this field, to evoke thinking on this topic.
 
 - Is the software/service/workload still useful?
 - Are there environments or workloads which could be switched off?
 - Have the requirements of our users stayed the same?
 - Are there features which could be removed?
-- Is there dark data which can be removed?
+- Is there "dark data" which can be removed?
 
 I will end this article with the wise words that Sarah Hsu delivered at a recent Green Software Foundation summit - efficiency is a starting point, but not the whole story... elimination is essential if we are to reach net zero.
