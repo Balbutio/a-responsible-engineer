@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Digital sustainability handbook: Community links to begin your journey."
+title:  "People speak of hope as if it's a delicate thing. It's not. Hope has dirt on her face, blood on her knuckles; and just spat out a tooth as she rises for another go"
 ---
 
 ### Fasten your seatbelts for climate and politics in 2025
@@ -16,3 +16,5 @@ As a group, we examined the systemic nature of our climate emergency with renewe
 We face big societal challenges ahead, but election results don't change what is required of us. Our goal today is the same as it was last month, and it's the same as it will be in 2029. Perhaps these results can even be the catalyst for us to make some positive changes to our lifestyles and our work. That is up to us.
 
 On that note, the community of responsible technologists working on digital sustainability is one of the most open, helpful and inspiring groups around. If you're a practitioner looking to progress your own journey in digital sustainability, I've put together a launchpad in the form of a github repo which might be a helpful springboard to get involved: https://github.com/Balbutio/digital-sustainability-handbook.
+
+__References:__ _Title is a paraphrased quote from Matthew @crowsfault_
